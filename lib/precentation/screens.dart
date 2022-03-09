@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pmj_reon_project/precentation/profile/profile_screen.dart';
 import 'package:pmj_reon_project/precentation/widgets/appBar/app_bar.dart';
-import 'home_screen/home_page.dart';
 import 'order/order_history/order_history.dart';
 import 'order/order_page.dart';
 
@@ -18,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   final List _pageList = [
     const ProfilePage(),
     const OrderPage(),
-    const OrderHistory(),
+    const OrderPage(),
   ];
 
   final List _pageTitle = [

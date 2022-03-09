@@ -18,10 +18,15 @@ class _OrderPageState extends State<OrderPage> {
     return ListView(
       children: [
         OrderTaileWidget(),
+        SizedBox(height: 25,),
         OrderTaileWidget(),
+        SizedBox(height: 25,),
         OrderTaileWidget(),
+        SizedBox(height: 25,),
         OrderTaileWidget(),
+        SizedBox(height: 25,),
         OrderTaileWidget(),
+        SizedBox(height: 25,),
       ],
     );
   }

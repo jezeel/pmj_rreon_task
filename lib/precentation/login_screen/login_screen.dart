@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../screens.dart';
+
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -142,7 +144,16 @@ class _LoginPageState extends State<LoginPage> {
                             color: Colors.red.shade900,
                             textColor: Colors.white,
                             child: const Text('Login'),
-                            onPressed: (){}),
+                            onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) {
+                                    return MainScreen();
+                                  },
+                                ),
+                              );
+                            }),
                       ),
                     )
                   ],
@@ -161,7 +172,9 @@ class _LoginPageState extends State<LoginPage> {
             Positioned(
               top: 92.h,
               child: FlatButton(
-                onPressed: () {},
+                onPressed: () {
+
+                },
                 child: Text(
                   "I don't have an account?",
                   style: TextStyle(color: Colors.blueGrey[900] ),

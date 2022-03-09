@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: ResponsiveSizer(
         builder: (context, orientation, screenType) {
-          return  MainScreen();
+          return  LoginPage();
         },
       ),
     );
