@@ -10,64 +10,61 @@ class OrderTaileWidget extends StatelessWidget {
       children: [
         Column(
           children: [
-            Padding(
-              padding: EdgeInsets.all(5),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),),
-                elevation: 3,
-                child: Theme(
-                  data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
-                  child: ExpansionTile(
-                    trailing: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children:  const [
-                        Text(
-                          "\$105.00",
-                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xff263238)),
-                        ),
-                        Padding(
-                            padding: EdgeInsets.only(
-                              top: 5,
-                              bottom: 8,
-                            ),
-                            child: Text(
-                              "Cash on Delivery",
-                              style: TextStyle(color: Colors.grey),
-                            ))
-                      ],
-                    ),
-                    iconColor: Colors.transparent,
-                    collapsedIconColor: Colors.transparent,
-                    title: const Text(
-                      "Order id: #28",
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-                    ),
-                    subtitle: const Text(
-                      "28-02-2022 | 10:03",
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    children: <Widget>[
-                      ListTile(
-                          title: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: const [Text("Delivery Fee"), Text("\$50.00")],
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: const [Text("Tax(5.0%)"), Text("\$5.00")],
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: const [Text("Total"), Text("\$105.00")],
-                              ),
-                            ],
-                          )),
+            Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),),
+              elevation: 3,
+              child: Theme(
+                data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                child: ExpansionTile(
+                  trailing: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children:  const [
+                      Text(
+                        "\$105.00",
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xff263238)),
+                      ),
+                      Padding(
+                          padding: EdgeInsets.only(
+                            top: 5,
+                            bottom: 8,
+                          ),
+                          child: Text(
+                            "Cash on Delivery",
+                            style: TextStyle(color: Colors.grey),
+                          ))
                     ],
                   ),
+                  iconColor: Colors.transparent,
+                  collapsedIconColor: Colors.transparent,
+                  title: const Text(
+                    "Order id: #28",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: const Text(
+                    "28-02-2022 | 10:03",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  children: <Widget>[
+                    ListTile(
+                        title: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [Text("Delivery Fee"), Text("\$50.00")],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [Text("Tax(5.0%)"), Text("\$5.00")],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [Text("Total"), Text("\$105.00")],
+                            ),
+                          ],
+                        )),
+                  ],
                 ),
               ),
             ),

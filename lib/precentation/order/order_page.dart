@@ -15,19 +15,22 @@ class _OrderPageState extends State<OrderPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        OrderTaileWidget(),
-        SizedBox(height: 25,),
-        OrderTaileWidget(),
-        SizedBox(height: 25,),
-        OrderTaileWidget(),
-        SizedBox(height: 25,),
-        OrderTaileWidget(),
-        SizedBox(height: 25,),
-        OrderTaileWidget(),
-        SizedBox(height: 25,),
-      ],
+    return Padding(
+      padding: EdgeInsets.all(5),
+      child: ListView(
+        children: [
+          OrderTaileWidget(),
+          SizedBox(height: 25,),
+          OrderTaileWidget(),
+          SizedBox(height: 25,),
+          OrderTaileWidget(),
+          SizedBox(height: 25,),
+          OrderTaileWidget(),
+          SizedBox(height: 25,),
+          OrderTaileWidget(),
+          SizedBox(height: 25,),
+        ],
+      ),
     );
   }
 }

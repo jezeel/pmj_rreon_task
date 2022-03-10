@@ -29,7 +29,13 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: common_Appbar(_pageTitle[_currentPage]),
+      extendBodyBehindAppBar: true,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(48),
+        child: AppBar4All(
+          appbarTitle: _pageTitle[_currentPage],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (newValue) {
           setState(() {
