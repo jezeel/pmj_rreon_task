@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pmj_reon_project/precentation/widgets/appBar/app_bar.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -11,31 +12,42 @@ class OrderDetails extends StatefulWidget {
 
 class _OrderDetailsState extends State<OrderDetails>
     with TickerProviderStateMixin {
-  Card itemsCard(){
-    return Card(
+  Padding itemsCard(){
+    return Padding(
+      padding: EdgeInsets.all(10),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            child: Text("ggggjjjj"),
+            height: 7.h,
+            width: 12.w,
+            child: Image(image: AssetImage('assets/images/629233.jpg'), fit: BoxFit.contain,),
           ),
-          Column(
-            children: [
-              Row(
-                children: [
-                  Text("gggg"),
-                  Text("gggg"),
-                ],
-              ),
-              Row(
-                children: [
-                  Text("gggg"),
-                  Text("gggg"),
-                ],
-              ),
-            ],
-          )
+          SizedBox(width: 4.w,),
+          Expanded(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Rice", style: TextStyle(color: Color(0xff37474f), fontWeight: FontWeight.bold, fontSize: 15),),
+                    Text("\$50.00", style: TextStyle(color: Color(0xff37474f), fontWeight: FontWeight.bold, fontSize: 15),),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("1000g", style:
+                TextStyle(color: Color(0xff90a4ae), fontSize: 12),
+                ),
+                    Text("x 0.5", style:
+                        TextStyle(color: Color(0xff90a4ae), fontSize: 12),),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -166,11 +178,12 @@ class _OrderDetailsState extends State<OrderDetails>
                 SizedBox(
                   height: 44.h,
                   child: TabBarView(
-                    children: [ListView(
+                    children: [Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         itemsCard(),
-                        Text('Person'),
-                        Text('Person')
+                        itemsCard(),
+                        itemsCard()
                       ],
                     ),
                       ListView(
