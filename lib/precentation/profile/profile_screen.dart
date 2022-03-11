@@ -26,7 +26,7 @@ class _ProfilePageState extends State<ProfilePage> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(2.5.h),
-                bottomRight: Radius.circular(2.5.h)),
+                bottomRight: Radius.circular(2.5.h),),
             gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
@@ -44,7 +44,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 radius: 39.0,
                 backgroundColor: Colors.red[800],
                 child: ClipRRect(
-                  child: Icon(
+                  child: const Icon(
                     Icons.person,
                     size: 60,
                   ),

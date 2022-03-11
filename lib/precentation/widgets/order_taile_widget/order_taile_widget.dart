@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pmj_reon_project/precentation/order/order_details/order_details.dart';
 
 class OrderTaileWidget extends StatelessWidget {
   const OrderTaileWidget({Key? key}) : super(key: key);
@@ -23,7 +24,7 @@ class OrderTaileWidget extends StatelessWidget {
                     children:  const [
                       Text(
                         "\$105.00",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xff263238)),
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xff37474f)),
                       ),
                       Padding(
                           padding: EdgeInsets.only(
@@ -71,8 +72,17 @@ class OrderTaileWidget extends StatelessWidget {
             Align(
               alignment: Alignment.topRight,
               child: TextButton(
-                onPressed: (){},
-                child: Text("View Details >", style: TextStyle(color: Colors.blueGrey.shade900),),
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return OrderDetails();
+                      },
+                    ),
+                  );
+                },
+                child: Text("View Details >", style: TextStyle(color: Color(0xff37474f)),),
               ),
             )
           ],
