@@ -14,7 +14,7 @@ class _OrderDetailsState extends State<OrderDetails>
     with TickerProviderStateMixin {
   Padding itemsCard(){
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,

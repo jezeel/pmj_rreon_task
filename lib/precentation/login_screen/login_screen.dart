@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pmj_reon_project/authentication/login_authentication.dart';
+import 'package:pmj_reon_project/models/login/login_response_model.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,6 +15,32 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
+
+  onLogin()  async {
+    LoginResponseModel loginApiResponse = await LoginAuthentication().loginPost(email: emailController.text, password: passwordController.text);
+    print(loginApiResponse.success);
+    if (loginApiResponse.success == true) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return MainScreen();
+          },
+        ),
+      );
+    } else{
+
+      var snackBar = const SnackBar(content: Text('Login Failed'));
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+    }
+  }
+
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   bool hidePassword = true;
 
   @override
@@ -27,6 +55,7 @@ class _LoginPageState extends State<LoginPage> {
           side: const BorderSide(color: Colors.black12, width: 2),
         ),
         child: TextField(
+          controller: emailController,
           onChanged: (value) {},
           decoration: const InputDecoration(
             hintText: "Email",
@@ -48,6 +77,7 @@ class _LoginPageState extends State<LoginPage> {
           side: const BorderSide(color: Colors.black12, width: 2),
         ),
         child: TextField(
+          controller: passwordController,
           onChanged: (value){},
           obscureText: hidePassword,
           decoration: InputDecoration(
@@ -145,14 +175,7 @@ class _LoginPageState extends State<LoginPage> {
                             textColor: Colors.white,
                             child: const Text('Login'),
                             onPressed: (){
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return MainScreen();
-                                  },
-                                ),
-                              );
+                              onLogin();
                             }),
                       ),
                     )
